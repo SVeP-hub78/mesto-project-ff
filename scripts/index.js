@@ -14,10 +14,12 @@ function createCard(name, link, deleteCallback) {
     });
     return card;
 }
+
 // @todo: Функция удаления карточки
 function deleteCard(card) {
     card.remove();
 } 
+
 // @todo: Вывести карточки на страницу
 initialCards.forEach((cardInfo) => {
     const card = createCard(cardInfo.name, cardInfo.link, deleteCard);
