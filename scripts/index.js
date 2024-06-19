@@ -5,21 +5,21 @@ cardTemplate = cardTemplateBox.content.querySelector('.card');
 // @todo: DOM узлы
 const placesList = document.querySelector('.places__list');
 // @todo: Функция создания карточки
-function createCards(name, link, deleteCallback) {
+function createCard(name, link, deleteCallback) {
     const card = cardTemplate.cloneNode(true);
     card.querySelector('.card__title').textContent = name;
-    card.querySelector('.card__image').src = link;
+    card.querySelector('.card__image').src = link, alt="";
     card.querySelector('.card__delete-button').addEventListener('click', (event) => {
         deleteCallback(card);
     });
     return card;
 }
 // @todo: Функция удаления карточки
-function deleteCard(event) {
-    event.remove();
+function deleteCard(card) {
+    card.remove();
 } 
 // @todo: Вывести карточки на страницу
 initialCards.forEach((cardInfo) => {
-    const card = createCards(cardInfo.name, cardInfo.link, deleteCard, undefined);
+    const card = createCard(cardInfo.name, cardInfo.link, deleteCard);
     placesList.append(card);
 });
