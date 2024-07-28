@@ -29,7 +29,7 @@ const cardTemplate = document.querySelector('#card-template').content;
 }
     //@todo Изменение цвета
 export function switchLike(likeButton) {
-    likeButton.classList.toggle('card__like-button_is-active')// надо найти 
+    likeButton.classList.toggle('card__like-button_is-active')
 }
 
 // @todo: Функция удаления карточки

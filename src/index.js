@@ -31,7 +31,7 @@ const addCardForm = popupTypeNewCard.querySelector('.popup__form');
  const cardsContainer = document.querySelector('.places__list');
 
 //делаем функцию "отправки" формы
-  function handleFormSubmit(evt) {
+  function handleFormElementSubmit(evt) {
       evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы. Так мы можем определить свою логику отправки.
 
     //получение значения полей jobInput и nameInput из свойства value
@@ -47,7 +47,7 @@ const addCardForm = popupTypeNewCard.querySelector('.popup__form');
   }
 
 // прикрепить обработчик к форме
-formElement.addEventListener('submit', handleFormSubmit);
+formElement.addEventListener('submit', handleFormElementSubmit);
 
 //обработчик отправки формы для добавления карточки
  function handleAddCardSubmit(evt) {
@@ -81,7 +81,7 @@ profileEditButton.addEventListener('click', () => {
      openModal(popupTypeEdit);
  });
 
-profileAddButton.addEventListener('click', () => openModal(popupTypeNewCard)); //карточки исчезают????????
+profileAddButton.addEventListener('click', () => openModal(popupTypeNewCard)); 
 
 //Делаем попап с картинкой
  const popupImage = document.querySelector('.popup__image');
