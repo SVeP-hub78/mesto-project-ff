@@ -14,24 +14,24 @@ import { openModal, closeModal } from './components/modal.js';
  const jobElement = document.querySelector('.profile__description');
 
 //Находим форму в DOM
-const formElement = document.querySelector('.popup__form_type_edit');
+const editPopupFormType = document.querySelector('.popup__form_type_edit');
 
 //Находим поля формы в DOM
- const nameInput = formElement.querySelector('.popup__input_type_name');
- const jobInput = formElement.querySelector('.popup__input_type_description');
+ const nameInput = editPopupFormType.querySelector('.popup__input_type_name');
+ const jobInput = editPopupFormType.querySelector('.popup__input_type_description');
 
 //делаем форму для добавления карточки
 const addCardForm = popupTypeNewCard.querySelector('.popup__form');
 
 //делаем поля формы для добавления карточки
- const CardNameInput = addCardForm.querySelector('.popup__input_type_card-name');
+ const cardNameInout = addCardForm.querySelector('.popup__input_type_card-name');
  const cardLinkInput = addCardForm.querySelector('.popup__input_type_url');
 
  //делаем контейнер для карточек
  const cardsContainer = document.querySelector('.places__list');
 
 //делаем функцию "отправки" формы
-  function handleFormElementSubmit(evt) {
+  function handleEditPopupFormTypeSubmit(evt) {
       evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы. Так мы можем определить свою логику отправки.
 
     //получение значения полей jobInput и nameInput из свойства value
@@ -47,14 +47,14 @@ const addCardForm = popupTypeNewCard.querySelector('.popup__form');
   }
 
 // прикрепить обработчик к форме
-formElement.addEventListener('submit', handleFormElementSubmit);
+editPopupFormType.addEventListener('submit', handleEditPopupFormTypeSubmit);
 
 //обработчик отправки формы для добавления карточки
  function handleAddCardSubmit(evt) {
      evt.preventDefault();
 
-    //получить значения полей cardNameInput и cardLinkInput из свойства value
-     const cardName = CardNameInput.value;
+    //получить значения полей cardNameInout и cardLinkInput из свойства value
+     const cardName = cardNameInout.value;
      const cardLink = cardLinkInput.value;
 
     //создать новую карточку
